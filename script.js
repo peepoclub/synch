@@ -243,11 +243,11 @@ function noFilm() {
    $("#qualityGroup").remove();
 }
 
-filmNative = false;
+var filmNative = false;
 
 function filmMode() {
     if ($("#currenttitle").text().toLowerCase().substring(0,8) == "videocdn" && filmNative == false) {
-        filmNative = true;
+        var filmNative = true;
         onFilm()
     }
     else if ($("#currenttitle").text().toLowerCase().substring(0,8) !== "videocdn" && filmNative == true) {
