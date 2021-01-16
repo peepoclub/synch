@@ -242,6 +242,8 @@ function noFilm() {
    $("#qualityGroup").remove();
 }
 
+filmNative = false;
+
 function filmMode() {
     if ($("#currenttitle").text().toLowerCase().substring(0,6) == "videocdn" && filmNative == false) {
         filmNative == true;
