@@ -257,7 +257,7 @@ function filmMode() {
 }
 
 
-setInterval(filmMode, 1000);
+setInterval(filmMode, 5000);
 
 function setQuality(quality) {
       document.querySelector("video.vjs-tech").src=(document.querySelector("video.vjs-tech").src).replace(/[0-9]*.mp4/, `${quality}.mp4`)
