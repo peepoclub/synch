@@ -189,35 +189,35 @@ $("#hideBottom").click(function() {
 });
 
 
-
-if (filmMode == true) {
+  
+// if (filmMode == true) {
  
-  setInterval($("#currenttitle").text("Фильм: " + filmName), 1000);
-  $(".embed-responsive").append(`
-<div class="embed-responsive embed-responsive-16by9 additionalByScript filmModeThing">
-<iframe
-  src=${filmURL}
-  referrerpolicy="origin"
-  scrolling="no"
-  class="filmModeThing"
-  allowfullscreen>
-</iframe>
-</div>`);
-  $("#ytapiplayer").hide();
-  $("#playlistrow").hide();
-  $("#rightpane").hide();
-  $("#rightcontrols").hide();
-  setFilmName();
-  //$(".filmModeThing").css("padding-bottom", "60.25%");
-} else {
-  $(".filmModeThing").remove();
-  $("#ytapiplayer").show();
-  $("#playlistrow").show();
-  $("#rightpane").show();
-  $("#rightcontrols").show();
-  $("#currenttitle").show();
-  $("#currenttitle").text("N/A");
-}
+//   setInterval($("#currenttitle").text("Фильм: " + filmName), 1000);
+//   $(".embed-responsive").append(`
+// <div class="embed-responsive embed-responsive-16by9 additionalByScript filmModeThing">
+// <iframe
+//   src=${filmURL}
+//   referrerpolicy="origin"
+//   scrolling="no"
+//   class="filmModeThing"
+//   allowfullscreen>
+// </iframe>
+// </div>`);
+//   $("#ytapiplayer").hide();
+//   $("#playlistrow").hide();
+//   $("#rightpane").hide();
+//   $("#rightcontrols").hide();
+//   setFilmName();
+//   //$(".filmModeThing").css("padding-bottom", "60.25%");
+// } else {
+//   $(".filmModeThing").remove();
+//   $("#ytapiplayer").show();
+//   $("#playlistrow").show();
+//   $("#rightpane").show();
+//   $("#rightcontrols").show();
+//   $("#currenttitle").show();
+//   $("#currenttitle").text("N/A");
+// }
 function setQuality(quality) {
       document.querySelector("video.vjs-tech").src=(document.querySelector("video.vjs-tech").src).replace(/[0-9]*.mp4/, `${quality}.mp4`)
       document.querySelector("video.vjs-tech>source").src=(document.querySelector("video.vjs-tech").src).replace(/[0-9]*.mp4/, `${quality}.mp4`)
