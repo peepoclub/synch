@@ -6,7 +6,7 @@ $("#main").prepend(`
       </iframe>
    </div>
 `);
-
+console.log("Twitch Chat created")
 var canHazRollin = true;
 
 bRoller = function() {
