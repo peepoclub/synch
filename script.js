@@ -1,17 +1,16 @@
 $("#main").prepend(`
-<div class="col-lg-5 col-md-5 additionalByScript" id="twitchChat">
-<iframe
-  id="chat_embed"
-  src="https://www.twitch.tv/embed/pwgood/chat?parent=synchtube.ru&darkpopout">
-</iframe>
-</div>
+   <div class="col-lg-5 col-md-5 additionalByScript" id="twitchChat">
+      <iframe
+        id="chat_embed"
+        src="https://www.twitch.tv/embed/pwgood/chat?parent=synchtube.ru&darkpopout">
+      </iframe>
+   </div>
 `);
 
 var canHazRollin = true;
 
 bRoller = function() {
   var s = document.body.style;
-
   s.setProperty("-moz-transform", "rotate(7200deg)");
   s.setProperty("-moz-transition-duration", "4s");
   s.setProperty("-moz-transition-property", "all");
@@ -218,9 +217,10 @@ $("#hideBottom").click(function() {
 //   $("#currenttitle").show();
 //   $("#currenttitle").text("N/A");
 // }
+
 function setQuality(quality) {
-      document.querySelector("video.vjs-tech").src=(document.querySelector("video.vjs-tech").src).replace(/[0-9]*.mp4/, `${quality}.mp4`)
-      document.querySelector("video.vjs-tech>source").src=(document.querySelector("video.vjs-tech").src).replace(/[0-9]*.mp4/, `${quality}.mp4`)
+      document.querySelector("video.vjs-tech").src=(document.querySelector("video.vjs-tech").src).replace(/[0-9]*.mp4/, `${quality}.mp4`);
+      document.querySelector("video.vjs-tech>source").src=(document.querySelector("video.vjs-tech").src).replace(/[0-9]*.mp4/, `${quality}.mp4`);
       $(`.qualityBtn`).prop('disabled', false);
       $(`.qualityBtn .${quality}`).prop('disabled', true);
       $(`.qualityBtn .${quality}`).html(`${quality} <img src="img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/rolling-on-the-floor-laughing_1f923.png" height="17px">" height="17px">`);
