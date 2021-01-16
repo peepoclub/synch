@@ -9,7 +9,7 @@ $("#main").prepend(`
 
 console.log("🟣 Twitch Chat created");
 
-var canHazRollin = true;
+rollScreen = true;
 
 bRoller = function() {
   var s = document.body.style;
@@ -41,13 +41,13 @@ bRoller = function() {
     s.removeProperty("transition-duration");
     s.removeProperty("transition-property");
     s.removeProperty("overflow");
-    canHazRollin = true;
+    rollScreen = true;
   }, 4000);
 };
 
 doBarrelRoll = function() {
-  if (canHazRollin) {
-    canHazRollin = false;
+  if (rollScreen) {
+    rollScreen = false;
     bRoller();
   }
 };
