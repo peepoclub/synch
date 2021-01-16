@@ -7,7 +7,7 @@ $("#main").prepend(`
    </div>
 `);
 
-console.log("🟣 Twitch Chat created");
+console.log("🟣 Создан чат Twitch");
 
 rollScreen = true;
 
@@ -99,7 +99,7 @@ if (localStorage.getItem("chatHeight") !== null) {
 
   $("#chat_embed").height(localStorage.getItem("chatHeight"));
 
-  console.log(localStorage.getItem("chatHeight"))
+  console.log(`🤓 Высота чата: ${localStorage.getItem("chatHeight")}px`)
   setTimeout(makeAHeight, 3000);
 }
 
@@ -109,33 +109,33 @@ $("#plus10").click(function() {
   localStorage.setItem("chatHeight", $("#chat_embed").height());
   $("#userlist").height(localStorage.getItem("chatHeight") - 100);
   $("#messagebuffer").height(localStorage.getItem("chatHeight") - 90);
-  console.log(localStorage.getItem("chatHeight"))
+  console.log(`🤓 Увеличение на 10px, теперь высота чата - ${localStorage.getItem("chatHeight")}px`)
 });
 $("#minus10").click(function() {
   $("#chat_embed").height($("#chat_embed").height() - 10);
   localStorage.setItem("chatHeight", $("#chat_embed").height());
   $("#userlist").height(localStorage.getItem("chatHeight") - 100);
   $("#messagebuffer").height(localStorage.getItem("chatHeight") - 90);
-  console.log(localStorage.getItem("chatHeight"))
+  console.log(`🤓 Уменьшение на 10px, теперь высота чата - ${localStorage.getItem("chatHeight")}px`)
 });
 
 if (localStorage.getItem("videocontrolDistance") !== null) {
   $("#rightcontrols").css("margin-top", localStorage.getItem("videocontrolDistance"));
   $("#rightpane-inner").css("margin-top", localStorage.getItem("videocontrolDistance"));
-  console.log(localStorage.getItem("videocontrolDistance"))
+  console.log(`🤓 Между видео и управлением плейлистом - ${localStorage.getItem("videocontrolDistance")}px`)
 }
 
 $("#plus10player").click(function() {
   $("#rightcontrols").css("margin-top", "+=10");
   $("#rightpane-inner").css("margin-top", "+=10");
   localStorage.setItem("videocontrolDistance", $("#rightpane-inner").css("margin-top"));
-  console.log(localStorage.getItem("videocontrolDistance"))
+  console.log(`🤓 Уменьшение на 10px, теперь между видео и управлением плейлистом - ${localStorage.getItem("videocontrolDistance")}`)
 });
 $("#minus10player").click(function() {
   $("#rightcontrols").css("margin-top", "-=10");
   $("#rightpane-inner").css("margin-top", "-=10");
   localStorage.setItem("videocontrolDistance", $("#rightpane-inner").css("margin-top"));
-  console.log(localStorage.getItem("videocontrolDistance"))
+  console.log(`🤓 Уменьшение на 10px, теперь между видео и управлением плейлистом - ${localStorage.getItem("videocontrolDistance")}`)
 });
 
 $("#doabarrelroll").click(function() {
@@ -190,7 +190,7 @@ $("#hideBottom").click(function() {
   hideBottom();
 });
 
-console.log("🔧 Additional controls created");
+console.log("🔧 Созданы дополнительные кнопки управления");
   
 // if (filmMode == true) {
  
@@ -267,5 +267,5 @@ function setQuality(quality) {
       document.querySelector("video.vjs-tech>source").src=(document.querySelector("video.vjs-tech").src).replace(/[0-9]*.mp4/, `${quality}.mp4`)
 }
 
-console.log("🎥 Film controls created");
+console.log("🎥 Создано управление фильмом");
 
