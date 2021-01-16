@@ -7,7 +7,7 @@ $("#main").prepend(`
    </div>
 `);
 
-console.log("Twitch Chat created");
+console.log("🟣 Twitch Chat created");
 
 var canHazRollin = true;
 
@@ -78,6 +78,7 @@ $("#rightcontrols").append(
           <button class="btn btn-sm btn-default" id="minus10player">-</button>
     </div>`
 );
+
 
 $("#twitchChatShow").click(function() {
   $("#chatwrap").hide();
@@ -189,7 +190,7 @@ $("#hideBottom").click(function() {
   hideBottom();
 });
 
-
+console.log("🔧 Additional controls created");
   
 // if (filmMode == true) {
  
@@ -265,4 +266,6 @@ function setQuality(quality) {
       document.querySelector("video.vjs-tech").src=(document.querySelector("video.vjs-tech").src).replace(/[0-9]*.mp4/, `${quality}.mp4`)
       document.querySelector("video.vjs-tech>source").src=(document.querySelector("video.vjs-tech").src).replace(/[0-9]*.mp4/, `${quality}.mp4`)
 }
+
+console.log("🎥 Film controls created");
 
