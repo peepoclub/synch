@@ -246,11 +246,11 @@ function noFilm() {
 filmNative = false;
 
 function filmMode() {
-    if ($("#currenttitle").text().toLowerCase().substring(0,6) == "videocdn" && filmNative == false) {
+    if ($("#currenttitle").text().toLowerCase().substring(0,8) == "videocdn" && filmNative == false) {
         filmNative == true;
         onFilm()
     }
-    else if ($("#currenttitle").text().toLowerCase().substring(0,6) !== "videocdn" && filmNative == true) {
+    else if ($("#currenttitle").text().toLowerCase().substring(0,8) !== "videocdn" && filmNative == true) {
         filmNative == false;
         noFilm()
     }
@@ -258,7 +258,6 @@ function filmMode() {
 
 
 setInterval(filmMode, 1000);
-setInterval(agree, 1000);
 
 function setQuality(quality) {
       document.querySelector("video.vjs-tech").src=(document.querySelector("video.vjs-tech").src).replace(/[0-9]*.mp4/, `${quality}.mp4`)
