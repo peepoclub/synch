@@ -229,7 +229,7 @@ function setQuality(quality) {
 
 function onFilm() {
     $("#rightcontrols").append(
-        `<div class="btn-group qualityGroup additionalByScript" role="group" aria-label="quality">
+        `<div class="btn-group qualityGroup additionalByScript ml-2" role="group" aria-label="quality">
                 <button class="btn btn-sm btn-default btn-disabled disabled" disabled>Качество</button>
                 <button class="btn btn-sm btn-default qualityBtn 240" onclick="setQuality('240')">240p</button>
                 <button class="btn btn-sm btn-default qualityBtn 360" onclick="setQuality('360')">360p</button>
@@ -247,11 +247,11 @@ filmNative = false;
 
 function filmMode() {
     if ($("#currenttitle").text().toLowerCase().substring(0,8) == "videocdn" && filmNative == false) {
-        filmNative == true;
+        filmNative = true;
         onFilm()
     }
     else if ($("#currenttitle").text().toLowerCase().substring(0,8) !== "videocdn" && filmNative == true) {
-        filmNative == false;
+        filmNative = false;
         noFilm()
     }
 }
