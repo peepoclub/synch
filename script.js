@@ -78,7 +78,7 @@ $("#rightcontrols").append(
           <button class="btn btn-sm btn-default" id="minus10player">-</button>
     </div>`
 );
-
+ 
 
 $("#twitchChatShow").click(function() {
   $("#chatwrap").hide();
@@ -96,9 +96,7 @@ function makeAHeight() {
 }
 
 if (localStorage.getItem("chatHeight") !== null) {
-
   $("#chat_embed").height(localStorage.getItem("chatHeight"));
-
   console.log(`🤓 Высота чата: ${localStorage.getItem("chatHeight")}px`)
   setTimeout(makeAHeight, 3000);
 }
