@@ -224,12 +224,7 @@ function setQuality(quality) {
       document.querySelector("video.vjs-tech>source").src=(document.querySelector("video.vjs-tech").src).replace(/[0-9]*.mp4/, `${quality}.mp4`);
 }
 
-var filmNative = false;
-
-function filmMode() {
-    if (filmNative === false && $("#currenttitle").text().toLowerCase().substring(0,8) == "videocdn") {
-        var filmNative = true;
-        $("#rightcontrols").append(
+$("#rightcontrols").append(
         `<div class="dropdown qualityGroup additionalByScript ml-2">
            <button class="btn btn-default dropdown-toggle" type="button" id="qMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
              Качество
@@ -243,20 +238,6 @@ function filmMode() {
            </ul>
           </div>`
         );
-    }
-    else if (filmNative == true && $("#currenttitle").text().toLowerCase().substring(0,8) !== "videocdn") {
-        var filmNative = false;
-        $("#qualityGroup").remove();
-    }
-}
-
-
-setInterval(filmMode, 5000);
-
-function setQuality(quality) {
-      document.querySelector("video.vjs-tech").src=(document.querySelector("video.vjs-tech").src).replace(/[0-9]*.mp4/, `${quality}.mp4`)
-      document.querySelector("video.vjs-tech>source").src=(document.querySelector("video.vjs-tech").src).replace(/[0-9]*.mp4/, `${quality}.mp4`)
-}
 
 console.log("🎥 Создано управление фильмом");
 
