@@ -227,8 +227,12 @@ function setQuality(quality) {
       $(`.qualityBtn .${quality}`).html(`${quality} <img src="img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/rolling-on-the-floor-laughing_1f923.png" height="17px">" height="17px">`);
 }
 
-function onFilm() {
-    $("#rightcontrols").append(
+var filmNative = false;
+
+function filmMode() {
+    if ($("#currenttitle").text().toLowerCase().substring(0,8) == "videocdn" && filmNative == false) {
+        var filmNative = true;
+        $("#rightcontrols").append(
         `<div class="btn-group qualityGroup additionalByScript ml-2" role="group" aria-label="quality">
                 <button class="btn btn-sm btn-default btn-disabled disabled" disabled>Качество</button>
                 <button class="btn btn-sm btn-default qualityBtn 240" onclick="setQuality('240')">240p</button>
@@ -236,23 +240,11 @@ function onFilm() {
                 <button class="btn btn-sm btn-default qualityBtn 480" onclick="setQuality('480')">480p</button>
                 <button class="btn btn-sm btn-default qualityBtn 720" onclick="setQuality('720')">720p</button>
           </div>`
-    );
-}
-
-function noFilm() {
-   $("#qualityGroup").remove();
-}
-
-var filmNative = false;
-
-function filmMode() {
-    if ($("#currenttitle").text().toLowerCase().substring(0,8) == "videocdn" && filmNative == false) {
-        var filmNative = true;
-        onFilm()
+        );
     }
     else if ($("#currenttitle").text().toLowerCase().substring(0,8) !== "videocdn" && filmNative == true) {
-        filmNative = false;
-        noFilm()
+        var filmNative = false;
+        $("#qualityGroup").remove();
     }
 }
 
