@@ -222,27 +222,29 @@ console.log("🔧 Созданы дополнительные кнопки уп�
 function setQuality(quality) {
       document.querySelector("video.vjs-tech").src=(document.querySelector("video.vjs-tech").src).replace(/[0-9]*.mp4/, `${quality}.mp4`);
       document.querySelector("video.vjs-tech>source").src=(document.querySelector("video.vjs-tech").src).replace(/[0-9]*.mp4/, `${quality}.mp4`);
-      $(`.qualityBtn`).prop('disabled', false);
-      $(`.qualityBtn .${quality}`).prop('disabled', true);
-      $(`.qualityBtn .${quality}`).html(`${quality} <img src="img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/rolling-on-the-floor-laughing_1f923.png" height="17px">" height="17px">`);
 }
 
 var filmNative = false;
 
 function filmMode() {
-    if ($("#currenttitle").text().toLowerCase().substring(0,8) == "videocdn" && filmNative == false) {
+    if (filmNative === false && $("#currenttitle").text().toLowerCase().substring(0,8) == "videocdn") {
         var filmNative = true;
         $("#rightcontrols").append(
-        `<div class="btn-group qualityGroup additionalByScript ml-2" role="group" aria-label="quality">
-                <button class="btn btn-sm btn-default btn-disabled disabled" disabled>Качество</button>
-                <button class="btn btn-sm btn-default qualityBtn 240" onclick="setQuality('240')">240p</button>
-                <button class="btn btn-sm btn-default qualityBtn 360" onclick="setQuality('360')">360p</button>
-                <button class="btn btn-sm btn-default qualityBtn 480" onclick="setQuality('480')">480p</button>
-                <button class="btn btn-sm btn-default qualityBtn 720" onclick="setQuality('720')">720p</button>
+        `<div class="dropdown qualityGroup additionalByScript ml-2">
+           <button class="btn btn-default dropdown-toggle" type="button" id="qMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+             Качество
+             <span class="caret"></span>
+           </button>
+           <ul class="dropdown-menu" aria-labelledby="qMenu1">
+             <li><a href="#" class="qualityBtn 240">240 рублей</a></li>
+             <li><a href="#" class="qualityBtn 360">360 рублей</a></li>
+             <li><a href="#" class="qualityBtn 480">480 рублей</a></li>
+             <li><a href="#" class="qualityBtn 720">720 рублей</a></li>
+           </ul>
           </div>`
         );
     }
-    else if ($("#currenttitle").text().toLowerCase().substring(0,8) !== "videocdn" && filmNative == true) {
+    else if (filmNative == true && $("#currenttitle").text().toLowerCase().substring(0,8) !== "videocdn") {
         var filmNative = false;
         $("#qualityGroup").remove();
     }
