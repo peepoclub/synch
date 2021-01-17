@@ -52,6 +52,10 @@ doBarrelRoll = function() {
     }
 };
 
+$("#doabarrelroll").click(function() {
+    doBarrelRoll();
+});
+
 $("#leftcontrols").append(
     '<button class="btn btn-sm btn-default additionalByScript" id="doabarrelroll">Поржать <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/271/rolling-on-the-floor-laughing_1f923.png" height="17px"></button>'
 );
@@ -136,10 +140,6 @@ $("#minus10player").click(function() {
     console.log(`🤓 Уменьшение на 10px, теперь между видео и управлением плейлистом - ${localStorage.getItem("videocontrolDistance")}`)
 });
 
-$("#doabarrelroll").click(function() {
-    doBarrelRoll();
-});
-
 $("#wrap > nav > div.navbar-header > a > img").attr(
     "src",
     "https://cdn.betterttv.net/emote/5e1bd08688e62a5f14dc6316/3x"
@@ -153,14 +153,13 @@ $("#nav-collapsible > ul > li:nth-child(4) > ul > li:nth-child(1) > a").html(
 $("#nav-collapsible > ul > li:nth-child(4) > ul > li:nth-child(2) > a").html(
     "Убрать плеер"
 );
+
 $("#nav-collapsible > ul > li:nth-child(4) > ul").append(
-    '<li><a id="hideChat" class="additionalByScript" href="#">Убрать чат</a></li>'
-);
-$("#nav-collapsible > ul > li:nth-child(4) > ul").append(
-    '<li><a id="hideBottom" class="additionalByScript" href="#">Убрать нижнюю часть</a></li>'
+    `<li><a id="hideChat" class="additionalByScript" href="#">Убрать чат</a></li>
+     <li><a id="hideBottom" class="additionalByScript" href="#">Убрать нижнюю часть</a></li>`
 );
 
-function hideChat() {
+$("#hideChat").click(function() {
     $("#leftcontrols").hide();
     $("#chatwrap").hide();
     $("#twitchChat").hide();
@@ -173,19 +172,12 @@ function hideChat() {
         .removeClass("col-md-7")
         .removeClass("col-12");
     $("#leftpane").remove();
-}
+});
 
-function hideBottom() {
+$("#hideBottom").click(function() {
     $("#playlistrow").remove();
     $("#rightcontrols").remove();
     $("#footer").remove();
-}
-
-$("#hideChat").click(function() {
-    hideChat();
-});
-$("#hideBottom").click(function() {
-    hideBottom();
 });
 
 console.log("🔧 Созданы дополнительные кнопки управления");
@@ -235,3 +227,8 @@ $("#rightcontrols").append(
 );
 
 console.log("🎥 Создано управление фильмом");
+
+$("#showsearch > span.hidden-xs").remove();
+$("#showmediaurl > span.hidden-xs").remove();
+$("#showcustomembed > span.hidden-xs").remove();
+$("#showplaylistmanager > span.hidden-xs").remove();
